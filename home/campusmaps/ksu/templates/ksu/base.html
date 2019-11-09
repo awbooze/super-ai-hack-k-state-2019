@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <title>{% block title %}{% endblock %} | KSU Campus Map</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'ksu/main.css' %}">
+    </head>
+    <body>
+        <header> 
+            <nav role="navigation">
+                <a href="{% url 'index' %}">KSU Campus Map</a>
+            </nav>
+        </header>
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+        <footer>
+            <p>Copyright 2019 Super AI Team. Code licensed under <a href="https://github.com/awbooze/super-ai-hack-k-state-2019/blob/master/LICENSE">MIT License</a>.</p>
+            <p>Created for <a href="https://hack-kstate-2019.devpost.com/">Hack K-State 2019</a>.</p>
+            <p><a href="https://github.com/awbooze/super-ai-hack-k-state-2019">GitHub</a></p>
+        </footer>
+    </body>
+</html>

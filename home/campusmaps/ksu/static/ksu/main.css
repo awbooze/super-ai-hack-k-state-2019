@@ -1,0 +1,99 @@
+html, body {
+    background-color: #fff;
+    color: #000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+h1, h2 {
+    text-align: center;
+    margin: auto;
+}
+#content {
+	padding: 0;
+    margin: 2em auto;
+    max-width: 60em;
+}
+#content a {
+    color: #512888;
+}
+
+/*Navbar*/
+nav {
+	display: block;
+	background-color: #512888;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+nav ul {
+	display: inline-block;
+	padding: 0;
+}
+nav > a {
+    font-size: 1.5em;
+    font-weight: 700;
+	display: inline-block;
+	margin: 1em;
+	vertical-align: middle;
+    border: none;
+    text-decoration: none;
+    color: #fff;
+}
+nav ul li {
+	font-size: 1em;
+	display: inline-block;
+	margin: 0.625em;
+	vertical-align: middle;
+}
+nav ul li a {
+	text-decoration: none;
+	color: #fff;
+	font-weight: 700;
+}
+nav ul li a:visited {
+	text-decoration: none;
+}
+nav ul li a:hover {
+	color: #000;
+}
+nav ul li a:active {
+	text-decoration: none;
+	color: #000;
+	font-style: normal;
+}
+/* End Navbar */
+
+/* Footer */
+footer {
+    clear: both;
+    background-color: #512888;
+	text-align: right;
+	font-size: 0.75em;
+	padding: 0.25em 1em;
+	margin: 0;
+}
+footer p {
+	padding: 0.25em 1em;
+	margin: auto;
+    max-width: 60em;
+    color: #fff;
+}
+footer p a {
+    color: #fff;
+}
+/* End Footer */
+
+/* Rules for mobile-friendly operation */
+@media screen and (max-width: 65em) {
+    #content {
+		margin: 2em 3%;
+    }
+}
+
+@media screen and (max-width: 45em) {
+    #content {
+		margin: 2em 5%;
+    }
+}

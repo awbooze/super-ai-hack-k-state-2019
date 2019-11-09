@@ -1,0 +1,18 @@
+{% extends "ksu/base.html" %}
+
+{% block title %}
+Floor List for {{building_name}} Hall
+{% endblock %}
+
+{% block content %}
+    <h2>Floor List for {{building_name}} Hall</h2>
+    {% if floor_list %}
+        <ul>
+        {% for floor in floor_list %}
+            <li><a href="{% url 'floors' floor.number %}">{{ floor.number }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No floors are available.</p>
+    {% endif %}
+{% endblock %}
