@@ -10,7 +10,7 @@ def index(request):
     return render(request, 'ksu/index.html', context)
     
 def floors(request, building_name):
-    b= get_object_or_404(Building, name=building_name)
+    b = get_object_or_404(Building, name=building_name)
     floor_list = Floor.objects.filter(building = b).order_by('number')
     context = {"floor_list":floor_list, "building_name":building_name}
 

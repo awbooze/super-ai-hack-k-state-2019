@@ -1,8 +1,10 @@
-<html>
-<head>
-    <title>KSU Campus Map Search</title>
-</head>
-<body>
+{% extends "ksu/base.html" %}
+
+{% block title %}
+KSU Campus Map Search
+{% endblock %}
+
+{% block content %}
     <h2>Search for Building and Room</h2>
     <script>
         function process()
@@ -25,7 +27,6 @@
             {% endfor %}
         </ul>
     {% else %}
-    <p> no buildings in system yet</p>
+    <p>No buildings in system.</p>
     {% endif %}
-</body>
-</html>
+{% endblock %}
