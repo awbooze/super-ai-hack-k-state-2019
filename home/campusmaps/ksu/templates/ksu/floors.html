@@ -1,0 +1,16 @@
+<html>
+<head>
+    <title>KSU Campus Map Search</title>
+</head>
+<body>
+    {% if floors_list %}
+        <ul>
+            {% for floor in floors_list %}
+            <li>{{floor.building.name}} {{floor.number}}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+    <p> no floors in system yet for this building</p>
+    {% endif %}
+</body>
+</html>

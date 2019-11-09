@@ -10,7 +10,11 @@ def index(request):
     return render(request, 'ksu/index.html', context)
     
 def floors(request, building_name):
-    return HttpResponse("You're looking at the floors for %s Hall" % building_name)
+    b= get_object_or_404(Building, name=building_name)
+    floors_list = Floor.objects.filter(building = b).order_by('number')
+    context = {"floors_list":floors_list}
+    return render(request, 'ksu/floors.html', context)
 
 def map(request, building_name, floor_id):
     return HttpResponse("You're looking at the rooms for %s Floor %i" % (building_name, floor_id))
+#def search(request, building_name, room_number):

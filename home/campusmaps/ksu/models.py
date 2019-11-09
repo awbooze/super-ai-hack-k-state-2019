@@ -14,7 +14,7 @@ class Floor(models.Model):
     # store reference to svg file here?
     
     def __str__(self):
-        return self.number
+        return str(self.number)
 
 class Room(models.Model):
     floor = models.ForeignKey(Floor, on_delete=models.CASCADE)
