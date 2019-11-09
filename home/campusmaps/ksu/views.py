@@ -5,7 +5,7 @@ from .models import *
 
 # Create your views here.
 def index(request):
-    building_list = Building.objects.order_by('-name')
+    building_list = Building.objects.order_by('name')
     context = {'building_list':building_list}
     return render(request, 'ksu/index.html', context)
     
@@ -21,4 +21,8 @@ def map(request, building_name, floor_id):
     floor = get_object_or_404(Floor, number=floor_id)
     context = {"floor":floor}
     return render(request, 'ksu/map.html', context)
-#def search(request, building_name, room_number):
+def search(request, building_name, room_number):
+    room=get_object_or_404(Room, number=room_number)
+    floor = room.floor
+    context = {"floor":floor}
+    return render(request, 'ksu/map.html', floor)
