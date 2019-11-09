@@ -9,7 +9,12 @@ Floor List for {{building_name}} Hall
     {% if floor_list %}
         <ul>
         {% for floor in floor_list %}
-            <li><a href="{% url 'map' building_name floor.number %}">{{building_name}} {{ floor.number }}</a></li>
+            <li><a href="{% url 'map' building_name floor.number %}">{{building_name}}         
+                {% if floor.number == 0 %}
+                    Basement
+                {% else %}
+                    Floor {{floor.number}}
+                {% endif %}</a></li>
         {% endfor %}
         </ul>
     {% else %}

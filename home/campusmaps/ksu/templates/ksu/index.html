@@ -20,10 +20,12 @@ KSU Campus Map Search
     <input type="number" placeholder="Rm. #" id="url2"/>
     <button type="submit">Search</button>
     </form>
+
+    <h2>List of Buildings</h2>
     {% if building_list %}
         <ul>
             {% for building in building_list %}
-            <li><a href="/ksu/{{building.name}}/">{{building.name}}</a></li>
+            <li><a href="/ksu/{{building.name}}/">{{building.name}} Hall</a></li>
             {% endfor %}
         </ul>
     {% else %}

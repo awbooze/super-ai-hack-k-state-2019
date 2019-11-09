@@ -17,5 +17,8 @@ def floors(request, building_name):
     return render(request, 'ksu/floors.html', context)
 
 def map(request, building_name, floor_id):
-    return HttpResponse("You're looking at the rooms for %s Floor %i" % (building_name, floor_id))
+    building = get_object_or_404(Building, name=building_name)
+    floor = get_object_or_404(Floor, number=floor_id)
+    context = {"floor":floor}
+    return render(request, 'ksu/map.html', context)
 #def search(request, building_name, room_number):
