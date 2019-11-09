@@ -1,0 +1,19 @@
+{% extends "ksu/base.html" %}
+
+{% block title %}
+Map for {{floor.building.name}} Hall
+{% endblock %}
+
+{% block content %}
+    <h2>Map for {{floor.building.name}} Hall 
+        {% if floor.number == 0 %}
+            Basement
+        {% else %}
+            Floor {{floor.number}}
+        {% endif %}</h2>
+    {% if floor %}
+        
+    {% else %}
+        <p>No map available.</p>
+    {% endif %}
+{% endblock %}

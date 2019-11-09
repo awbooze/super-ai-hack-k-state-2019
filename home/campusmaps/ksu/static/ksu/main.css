@@ -18,6 +18,9 @@ h1, h2 {
 #content a {
     color: #512888;
 }
+form {
+    margin: 1em;
+}
 
 /*Navbar*/
 nav {
