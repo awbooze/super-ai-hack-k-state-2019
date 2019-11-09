@@ -4,7 +4,6 @@ from django.db import models
 class Building(models.Model):
     name = models.CharField(max_length=200)
     abbreviation = models.CharField(max_length=10)
-    # store reference to svg file here?
     
     def __str__(self):
         return self.name
