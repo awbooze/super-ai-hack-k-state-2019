@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>KSU Campus Map Search</title>
+</head>
+<body>
+    <h2>Search for Building and Room</h2>
+    <script>
+        function process()
+        {
+            var url= "/ksu/"+document.getElementById("url1").value+"/"+document.getElementById("url2").value;
+            window.location.href = url;
+            return false;
+        }
+    </script>
+
+    <form onsubmit="return process()">
+    <input type="text" placeholder="Building" id="url1"/>
+    <input type="number" placeholder="Rm. #" id="url2"/>
+    <button type="submit">Search</button>
+    </form>
+    {% if building_list %}
+        <ul>
+            {% for building in building_list %}
+            <li><a href="/ksu/{{building.name}}/">{{building.name}}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+    <p> no buildings in system yet</p>
+    {% endif %}
+</body>
+</html>
