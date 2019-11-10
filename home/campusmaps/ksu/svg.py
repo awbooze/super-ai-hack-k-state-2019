@@ -42,7 +42,8 @@ from xml.dom import minidom
 
 # doc.unlink()
 
-TRANSF_SCALE = 12
+TRANSF_SCALE_X = 12.6
+TRANSF_SCALE_X = 12.3
 
 
 '''
@@ -134,8 +135,8 @@ def map_rooms(svg, filename):
     min_transf_x = 0
     min_transf_y = 0
 
-    max_transf_x = width * TRANSF_SCALE
-    max_transf_y = height * TRANSF_SCALE
+    max_transf_x = width * TRANSF_SCALE_x
+    max_transf_y = height * TRANSF_SCALE_Y
 
 
 
