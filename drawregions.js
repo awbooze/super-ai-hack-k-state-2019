@@ -13,6 +13,7 @@ var img = document.getElementById('svg');
 var width = img.naturalWidth;
 var height = img.naturalHeight;
 
+
 function loadDoc() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -30,6 +31,7 @@ function formatInput(str){
 	for (i = 0; i < res.length; i++) { 
 		res2 = res[i].split(" ");
 		rooms.push([res2[0], (width*res2[1]), (height*res2[2])]);
+		//alert(res[i][0]);
 	} 
 	for(j = 0; j < rooms.length; j++){
 		newArea = document.createElement('area');
