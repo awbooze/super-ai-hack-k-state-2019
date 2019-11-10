@@ -55,5 +55,6 @@ def newBuilding(request):
 def handle_uploaded_file(f, b, n):
     fs = FileSystemStorage()
     filename = fs.save("svg/"+b+"_"+n.__str__()+".svg", f)
-    map_rooms(fs.url(filename), "ksu/"+b+"_"+n.__str__()+".txt")
+    map_rooms(settings.MEDIA_ROOT+"/svg/"+b+"_"+n.__str__()+".svg", "ksu/"+b+"_"+n.__str__()+".txt")
+    clean_svg(settings.MEDIA_ROOT+"/svg/"+b+"_"+n.__str__()+".svg",settings.MEDIA_ROOT+"/svg/"+b+"_"+n.__str__()+"c.svg")
     return "svg/"+b+"_"+n.__str__()+".svg"
