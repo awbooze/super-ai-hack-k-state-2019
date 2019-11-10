@@ -1,27 +1,79 @@
 <!DOCTYPE html>
+
 <html>
+
   <head>
+
     <meta charset="UTF-8">
+
     <title>title</title>
 
+
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
     <script type='text/javascript' src='http://davidlynch.org/projects/maphilight/jquery.maphilight.js'></script>
+
+
+
+  </head>
+
+  <body>
+
+  <button type="button" onclick="loadDoc()">Request data</button>
+
+<p id="demo"></p>
+
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "Output.txt", true);
+  xhttp.send();
+}
+</script>
+
+    <!-- awesome CSS here-->
+    <style>
+      .container {
+        position: relative;
+      }
+    </style>
 
   </head>
   <body>
-  
+
     <p id="dimensions">dimensions go here</p>
 
-    <img src="cleaned.svg" id="svg" usemap="#image-map" class="map">
+
+
+    <img src="CW1.svg" id="svg" usemap="#image-map" class="map">
+
+
 
     <map name="image-map">
+
       <area shape="rect" coords="100,100,150,150" alt="Room number">
-      <area shape="circle" coords="90,58,3" alt="Mercury">
+
+
+
     </map>
 
+
+
     <!-- javascript file local-->
+
     <script type="text/javascript" src="drawregions.js"></script>
 
+
+
   </body>
+
 </html>
