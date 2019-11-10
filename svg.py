@@ -157,6 +157,7 @@ def map_rooms(svg):
 
 
     doc.unlink()
+    return rooms
 
 
 
