@@ -44,7 +44,7 @@ from xml.dom import minidom
 
 TRANSF_SCALE = 12
 
-def clean_svg(svg):
+def clean_svg(svg, filename):
 
     doc = minidom.parse(svg)  # parseString also exists
 
@@ -62,7 +62,7 @@ def clean_svg(svg):
 
 
 
-    doc.writexml(open('cleaned.svg', 'w'),
+    doc.writexml(open(filename, 'w'),
 
                indent="  ",
 
