@@ -4,11 +4,9 @@
 Add New Campus Building
 {% endblock %}
 {% block content %}
-<form method="POST" enctype="multipart/form-data">
+<form action="/newBuilding/" method="POST" enctype="multipart/form-data">
     {% csrf_token %} 
-    <input type="text" placeholder="Building Name" />
-    <input type ="text" placeholder="Abbreviation" />
-    <input type = "number" placeholder="Floor #" />
-    <input type = "file" accept=".svg, .SVG" name='fileUpload'/>
+    {{form}}
+    <button type="submit" id="submit">Submit</button>
 </form>
 {% endblock %}
