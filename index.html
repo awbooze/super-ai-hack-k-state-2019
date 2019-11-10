@@ -5,60 +5,20 @@
     <title>title</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <script>
-      function writeText(text) {
-        document.getElementById("desc").innerHTML = text;
-      }
-    </script>
-
-
-    <!-- awesome CSS here-->
-    <style>
-      .container {
-        position: relative;
-      }
-    </style>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type='text/javascript' src='http://davidlynch.org/projects/maphilight/jquery.maphilight.js'></script>
 
   </head>
   <body>
-    <!-- <object 
-    id="external-1"
-    type="image/svg+xml" 
-    data="cleaned.svg">
-      Your browser does not support SVG
-    </object> -->
-
-    <p id="desc">default text</p>
   
-  <p id="dimensions">dimensions go here</p>
+    <p id="dimensions">dimensions go here</p>
 
-  <img src="cleaned.svg" id="svg" usemap="#image-map" height="100%" width="100%">
-    <p>Something something something something somsething</p>
-    <a href="#" data-toggle="tooltip" title="Hooray!">Hover over me</a>
+    <img src="cleaned.svg" id="svg" usemap="#image-map" class="map">
 
-  <map name="image-map">
-    <area shape="rect" coords="0,0,82,126" alt="Room number"
-      onmouseover="writeText('mousing over top left')"
-      onmouseout="writeText('default text')">
+    <map name="image-map">
+      <area shape="rect" coords="100,100,150,150" alt="Room number">
       <area shape="circle" coords="90,58,3" alt="Mercury">
-  </map>
-
-    
-    <!-- JAVASCRIPT...-->
-    <script type="text/javascript">
-      var img = document.getElementById('svg'); 
-      img.onload = function() {
-        // write dimensions to html page
-        document.getElementById("dimensions").innerHTML = this.width + 'x' + this.height;
-      }
-
-      $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip();   
-      });
-
-  </script>
+    </map>
 
     <!-- javascript file local-->
     <script type="text/javascript" src="drawregions.js"></script>
