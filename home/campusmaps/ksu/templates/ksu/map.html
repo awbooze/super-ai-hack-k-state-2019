@@ -12,7 +12,7 @@ Map for {{floor.building.name}} Hall
             Floor {{floor.number}}
         {% endif %}</h2>
     {% if floor %}
-        
+        <img src="{{MEDIA_URL}}svg/{{floor.building.name}}_{{floor.number}}.svg" width="100%" height="100%" alt="Floor blueprint for {{floor.building.name}} Floor {{floor.number}}.">
     {% else %}
         <p>No map available.</p>
     {% endif %}
