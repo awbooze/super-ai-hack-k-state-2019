@@ -129,4 +129,6 @@ dmypy.json
 # Ignore all local history of files
 .history
 
+#Ignore all SVG files
+.svg
 # End of https://www.gitignore.io/api/django,visualstudiocode
