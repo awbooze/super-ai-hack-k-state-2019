@@ -13,13 +13,10 @@ h1, h2 {
 #content {
 	padding: 0;
     margin: 2em auto;
-    max-width: 60em;
+    max-width: 80em;
 }
 #content a {
     color: #512888;
-}
-form {
-    margin: 1em;
 }
 
 /*Navbar*/
@@ -30,10 +27,6 @@ nav {
     padding: 0;
     margin: 0;
 }
-nav ul {
-	display: inline-block;
-	padding: 0;
-}
 nav > a {
     font-size: 1.5em;
     font-weight: 700;
@@ -43,6 +36,10 @@ nav > a {
     border: none;
     text-decoration: none;
     color: #fff;
+}
+nav ul {
+	display: inline-block;
+	padding: 0;
 }
 nav ul li {
 	font-size: 1em;
@@ -59,11 +56,11 @@ nav ul li a:visited {
 	text-decoration: none;
 }
 nav ul li a:hover {
-	color: #000;
+	color: #fff;
 }
 nav ul li a:active {
 	text-decoration: none;
-	color: #000;
+	color: #fff;
 	font-style: normal;
 }
 /* End Navbar */
@@ -72,21 +69,44 @@ nav ul li a:active {
 footer {
     clear: both;
     background-color: #512888;
-	text-align: right;
 	font-size: 0.75em;
-	padding: 0.25em 1em;
-	margin: 0;
+	padding: 0.5em 1em;
+    margin: 0;
 }
 footer p {
 	padding: 0.25em 1em;
 	margin: auto;
-    max-width: 60em;
     color: #fff;
+    max-width: 80em;
+    text-align: right;
 }
 footer p a {
     color: #fff;
 }
 /* End Footer */
+
+/* Form Code */
+form {
+    margin: 1em;
+    display: block;
+    text-align: center;
+}
+form label {
+    margin: 0 1em 0 0;
+}
+form label:before {
+    content: "\a";
+    white-space: pre;
+}
+form input {
+    width: 20em;
+}
+#submit {
+    margin: 2em auto;
+    display: block;
+    text-align: center;
+}
+/* End Form */
 
 /* Rules for mobile-friendly operation */
 @media screen and (max-width: 65em) {
@@ -98,5 +118,14 @@ footer p a {
 @media screen and (max-width: 45em) {
     #content {
 		margin: 2em 5%;
+    }
+    form input {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 23.3em) {
+    nav > a {
+        margin: 1em 1em 0 1em;
     }
 }

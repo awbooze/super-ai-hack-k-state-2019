@@ -3,6 +3,7 @@
 {% block title %}
 Add New Campus Building
 {% endblock %}
+
 {% block content %}
 <form action="/newBuilding/" method="POST" enctype="multipart/form-data">
     {% csrf_token %} 
