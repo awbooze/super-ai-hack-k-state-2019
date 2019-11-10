@@ -4,6 +4,8 @@ from django.template import loader
 from .models import *
 from .forms import UploadSVG
 from django.core.files.storage import FileSystemStorage
+from ksu.svg import *
+from django.conf import settings
 # Index page
 def index(request):
     building_list = Building.objects.order_by('name')
@@ -45,7 +47,7 @@ def newBuilding(request):
                 f.save()
                 url = handle_uploaded_file(request.FILES['image'], b.name, f.number)
                 return HttpResponse(url)
-            return HttpResponse("Thanks!")
+            #return HttpResponse("Thanks!")
     else:
         form = UploadSVG()
     return render(request, 'ksu/newBuilding.html', {'form':form})
@@ -53,4 +55,5 @@ def newBuilding(request):
 def handle_uploaded_file(f, b, n):
     fs = FileSystemStorage()
     filename = fs.save("svg/"+b+"_"+n.__str__()+".svg", f)
-    return fs.url("svg/"+b+"_"+n.__str__()+".svg")
+    map_rooms(fs.url("svg/"+b+"_"+n.__str__()+".svg"), "ksu/"+b+"_"+n.__str__()+".txt")
+    return "svg/"+b+"_"+n.__str__()+".svg"
