@@ -25,7 +25,7 @@ KSU Campus Map Search
     {% if building_list %}
         <ul>
             {% for building in building_list %}
-            <li><a href="/ksu/{{building.name}}/">{{building.name}} Hall</a></li>
+            <li><a href="{% url 'floors' building.name %}">{{building.name}} Hall</a></li>
             {% endfor %}
         </ul>
     {% else %}
