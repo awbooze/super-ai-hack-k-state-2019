@@ -36,7 +36,7 @@ function formatInput(str){
 	for(j = 0; j < rooms.length; j++){
 		newArea = document.createElement('area');
 		newArea.shape = 'circle';
-		newArea.coords = rooms[j][1] + ',' + rooms[j][2] + ',50';
+		newArea.coords = rooms[j][1] + ',' + rooms[j][2] + ',40';
 		map.appendChild(newArea);
 	}
 }
