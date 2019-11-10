@@ -1,0 +1,14 @@
+{% extends "ksu/base.html" %}
+ 
+{% block title %}
+Add New Campus Building
+{% endblock %}
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %} 
+    <input type="text" placeholder="Building Name" />
+    <input type ="text" placeholder="Abbreviation" />
+    <input type = "number" placeholder="Floor #" />
+    <input type = "file" accept=".svg, .SVG" name='fileUpload'/>
+</form>
+{% endblock %}

@@ -30,3 +30,7 @@ def search(request, building_name, room_number):
     floor = room.floor
     context = {"floor":floor}
     return render(request, 'ksu/map.html', context)
+def newBuilding(request):
+    context = {}
+    return render(request, 'ksu/newBuilding.html', context)
+
