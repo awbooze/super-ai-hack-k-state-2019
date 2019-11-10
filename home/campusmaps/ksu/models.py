@@ -11,7 +11,7 @@ class Building(models.Model):
 class Floor(models.Model):
     building = models.ForeignKey(Building, on_delete=models.CASCADE)
     number = models.IntegerField(default=-1)
-    # file = models.CharField(max_length=200)
+    # filePath = models.CharField(max_length=200)
     
     def __str__(self):
         return str(self.number)
