@@ -25,4 +25,4 @@ def search(request, building_name, room_number):
     room=get_object_or_404(Room, number=room_number)
     floor = room.floor
     context = {"floor":floor}
-    return render(request, 'ksu/map.html', floor)
+    return render(request, 'ksu/map.html', context)
