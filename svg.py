@@ -81,8 +81,17 @@ def get_relative_coord(transf_coord, min_transf, max_transf):
 
     return 1 - transf_coord / max_transf
 
-#def valid_room(roomName):
-#    for(i in range(len(roomName) - 1)):
+def valid_room(roomName):
+    flag = True
+    length = len(roomName)
+    for i in range(length - 1):
+        if not roomName[i].isdigit():
+            flag = False
+    if length < 2 or length > 4 or roomName[len(roomName) - 1] == '\'':
+        flag = False
+
+    return flag
+
 
 
 
@@ -91,7 +100,6 @@ def map_rooms(svg):
 
     doc = minidom.parse(svg)  # parseString also exists
 
-    print(doc.getElementsByTagName("height"))
 
     path_strings = [path.getAttribute('id') for path in doc.getElementsByTagName('text')]
 
@@ -124,7 +132,7 @@ def map_rooms(svg):
 
             roomName = tspanElement.firstChild.nodeValue
 
-            print('Room number: ' + roomName)
+            #print('Room number: ' + roomName)
 
 
 
@@ -132,7 +140,7 @@ def map_rooms(svg):
 
         transformElement = textElement.getAttribute('transform')
 
-        #print(transformElement) # a string
+
 
         pieces = transformElement.split(",")
 
@@ -142,9 +150,9 @@ def map_rooms(svg):
         relative_x = get_relative_coord(transf_x, min_transf_x, max_transf_x)
         relative_y = get_relative_coord(transf_y, min_transf_y, max_transf_y)
 
-        #if(transf_x > 3500 and valid_room(roomName)):
-
-        rooms[roomName] = (relative_x, relative_y)
+        if(valid_room(roomName)):
+            rooms[roomName] = (relative_x, relative_y)
+            print(roomName)  # a string
 
 
 
@@ -152,6 +160,6 @@ def map_rooms(svg):
 
 
 
-rooms = map_rooms('Cardwell Hall Floor 1.svg')
+#rooms = map_rooms('Cardwell Hall Floor 1.svg')
 
 #clean_svg('Durland-Rathbone-Fiedler-Engineering Hall-Floor3.svg')
